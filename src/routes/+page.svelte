@@ -1,6 +1,11 @@
+<script>
+    /** @type {import('./$types').PageData} */
+   export let data 
+</script>
+
 <main>
     <picture>
-        <img src="" alt="profiel foto">
+        <img src="{data.person.avatar}" alt="profiel foto">
     </picture>
 
     <section>
@@ -13,16 +18,16 @@
         <h2>UNMOUTABLE_BOOT_VOLUME</h2>
 
         <p>
-            We’ve detected an error called: ”SAMMY-BENSINK.exe”, also known as: “Sambal”.
+            We’ve detected an error called: ”{data.person.name.toUpperCase()}-{data.person.surname.toUpperCase()}.EXE”, also known as: “{data.person.nickname}”.
             If this is the first time you’ve seen this error, restart your computer.
-            If this screen appears again, you should seek help at: https://github.com/.
+            If this screen appears again, you should seek help at: <a href="{data.person.website}">https://github.com/</a>.
             
             If you want to know about this issue, seek help bij looking through information
-            noted as: “SamaraFellaDina”. 
+            noted as: “{data.person.github_handle}”. 
         </p>
 
-        <h2>SAMMY-MESSAGE_ERROR_205</h2>
-        <p>"M&M reclames zijn F*cking irritant"</p>
+        <h2>{data.person.name.toUpperCase()}-MESSAGE_ERROR_205</h2>
+        <p>"{data.person.bio}"</p>
     </section>
 </main>
 
