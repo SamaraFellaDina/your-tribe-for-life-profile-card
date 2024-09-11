@@ -1,41 +1,47 @@
 <script>
-    /** @type {import('./$types').PageData} */
    export let data 
 </script>
 
 <main>
-    <picture>
-        <img src="{data.person.avatar}" alt="profiel foto">
-    </picture>
+    <ul>
+        <li>
+            <picture>
+                <img src="{data.person.avatar}" alt="profiel foto">
+            </picture>
+        </li>
+        <li>
+            <section>
+                <h1>
+                    A problem had been detected and Windows has
+                    been shut down to prevent damage to
+                    your computer.
+                </h1>
+        
+                <h2>UNMOUTABLE_BOOT_VOLUME</h2>
+        
+                <p>
+                    We’ve detected an error called: ”{data.person.name.toUpperCase()}-{data.person.surname.toUpperCase()}.EXE”, also known as: “{data.person.nickname}”.
+                    If this is the first time you’ve seen this error, restart your computer.
+                    If this screen appears again, you should seek help at: <a href="{data.person.website}">https://github.com/</a>.
+                    
+                    If you want to know about this issue, seek help bij looking through information
+                    noted as: “{data.person.github_handle}”. 
+                </p>
+        
+                <h2>{data.person.name.toUpperCase()}-MESSAGE_ERROR_205</h2>
+                <p>"{data.person.bio}"</p>
+            </section>
+        </li>
+    </ul>
 
-    <section>
-        <h1>
-            A problem had been detected and Windows has
-            been shut down to prevent damage to
-            your computer.
-        </h1>
 
-        <h2>UNMOUTABLE_BOOT_VOLUME</h2>
 
-        <p>
-            We’ve detected an error called: ”{data.person.name.toUpperCase()}-{data.person.surname.toUpperCase()}.EXE”, also known as: “{data.person.nickname}”.
-            If this is the first time you’ve seen this error, restart your computer.
-            If this screen appears again, you should seek help at: <a href="{data.person.website}">https://github.com/</a>.
-            
-            If you want to know about this issue, seek help bij looking through information
-            noted as: “{data.person.github_handle}”. 
-        </p>
-
-        <h2>{data.person.name.toUpperCase()}-MESSAGE_ERROR_205</h2>
-        <p>"{data.person.bio}"</p>
-    </section>
 </main>
 
 <style>
     @font-face {
     font-family: "Pixel";
-    src:
-        url("assets/font/Jersey20-Regular.ttf");
+    src: url("../fonts/Jersey20-Regular.ttf");
     }
 
     :root {
@@ -43,17 +49,46 @@
     }
 
     main {
+        --average-padding: 3em;
         font-family: "Pixel", sans-serif;
         color: white;
         letter-spacing: .04em;
         width: 70%;
+        padding: var(--average-padding);
+        width: 50em;
+        margin: 0 auto
+    }
+
+    ul,
+    li {
+    display: block;
+    list-style-type: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+    unicode-bidi: isolate;
+    }
+
+    img {
+        --image-format: 10em;
+        width: var(--image-format);
+        height: var(--image-format);
+    }
+
+    h1,
+    h2,
+    p{
+        --main-color: rgb(255, 255, 255);
+        color: var(--main-color);
     }
 
     h1,
     h2 {
         --h1-size: 3em;
         --h2-size: 2em;
-
+        line-height: .8em;
         font-weight: 500;
     }
 
@@ -70,5 +105,10 @@
         font-size: var(--p-size);
         line-height: 1.2em;
         font-weight: 300;
+    }
+    
+    a {
+        --hyperlinks: rgb(0, 255, 0);
+        color: var(--hyperlinks);
     }
 </style>
