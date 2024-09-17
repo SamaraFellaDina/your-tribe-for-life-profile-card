@@ -33,9 +33,6 @@
             </section>
         </li>
     </ul>
-
-
-
 </main>
 
 <style>
@@ -49,37 +46,23 @@
     }
 
     main {
-        --average-padding: 3em;
+        --average-padding: 1em 0;
         font-family: "Pixel", sans-serif;
         color: white;
         letter-spacing: .04em;
-        width: 70%;
         padding: var(--average-padding);
-        width: 50em;
-        margin: 0 auto
-    }
+        width: 80%;
+        margin: 0 auto;
+        
+        @media screen and (min-width: 1080px) {
+            width: 50em;
+        }
 
-    ul,
-    li {
-    display: block;
-    list-style-type: none;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 0px;
-    unicode-bidi: isolate;
-    }
-
-    img {
-        --image-format: 10em;
-        width: var(--image-format);
-        height: var(--image-format);
     }
 
     h1,
     h2,
-    p{
+    p  {
         --main-color: rgb(255, 255, 255);
         color: var(--main-color);
     }
@@ -92,16 +75,51 @@
         font-weight: 500;
     }
 
+    ul,
+    li {
+        display: block;
+        list-style-type: none;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 0px;
+        unicode-bidi: isolate;
+    }
+
+    ul li:nth-child(1){
+        display: flex;
+        margin: 0 auto;
+        justify-content: center;
+    }
+
+    img {
+        --image-format: 8em;
+        width: var(--image-format);
+        height: var(--image-format);
+    }
+
     h1 {
+        --margin-block: 1em;
+        margin-block-start: var(--margin-block);
+        margin-block-end: var(--margin-block);
         font-size: var(--h1-size);
     }
 
     h2 {
+        --margin-block:.3em;
+        margin-block-start: var(--margin-block);
+        margin-block-end: var(--margin-block);
         font-size: var(--h2-size);
     }
 
     p {
         --p-size: 1.4em;
+        --margin-block:.3em;
+
+        margin-block-start: var(--margin-block);
+        margin-block-end: var(--margin-block);
+
         font-size: var(--p-size);
         line-height: 1.2em;
         font-weight: 300;
