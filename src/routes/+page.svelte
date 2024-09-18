@@ -38,7 +38,7 @@
 <style>
     @font-face {
     font-family: "Pixel";
-    src: url("../fonts/Jersey20-Regular.ttf");
+    src: url("/fonts/Jersey20-Regular.ttf");
     }
 
     :root {
