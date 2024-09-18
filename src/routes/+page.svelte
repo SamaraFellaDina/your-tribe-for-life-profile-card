@@ -2,38 +2,40 @@
    export let data 
 </script>
 
-<main>
-    <ul>
-        <li>
-            <picture>
-                <img src="{data.person.avatar}" alt="profiel foto">
-            </picture>
-        </li>
-        <li>
-            <section>
-                <h1>
-                    A problem had been detected and Windows has
-                    been shut down to prevent damage to
-                    your computer.
-                </h1>
-        
-                <h2>UNMOUTABLE_BOOT_VOLUME</h2>
-        
-                <p>
-                    We’ve detected an error called: ”{data.person.name.toUpperCase()}-{data.person.surname.toUpperCase()}.EXE”, also known as: “{data.person.nickname}”.
-                    If this is the first time you’ve seen this error, restart your computer.
-                    If this screen appears again, you should seek help at: <a href="{data.person.website}">https://github.com/</a>.
-                    
-                    If you want to know about this issue, seek help bij looking through information
-                    noted as: “{data.person.github_handle}”. 
-                </p>
-        
-                <h2>{data.person.name.toUpperCase()}-MESSAGE_ERROR_205</h2>
-                <p>"{data.person.bio}"</p>
-            </section>
-        </li>
-    </ul>
-</main>
+<body>
+    <main>
+        <ul>
+            <li>
+                <picture>
+                    <img src="{data.person.avatar}" alt="profiel foto">
+                </picture>
+            </li>
+            <li>
+                <section>
+                    <h1>
+                        A problem had been detected and Windows has
+                        been shut down to prevent damage to
+                        your computer.
+                    </h1>
+            
+                    <h2>UNMOUTABLE_BOOT_VOLUME</h2>
+            
+                    <p>
+                        We’ve detected an error called: ”{data.person.name.toUpperCase()}-{data.person.surname.toUpperCase()}.EXE”, also known as: “{data.person.nickname}”.
+                        If this is the first time you’ve seen this error, restart your computer.
+                        If this screen appears again, you should seek help at: <a href="{data.person.website}">https://github.com/</a>.
+                        
+                        If you want to know about this issue, seek help bij looking through information
+                        noted as: “{data.person.github_handle}”. 
+                    </p>
+            
+                    <h2>{data.person.name.toUpperCase()}-MESSAGE_ERROR_205</h2>
+                    <p>"{data.person.bio}"</p>
+                </section>
+            </li>
+        </ul>
+    </main>
+</body>
 
 <style>
     @font-face {
@@ -45,6 +47,14 @@
         background-color: blue;
     }
 
+    body {
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        height: 100vh; 
+        margin: 0;
+    }
+    
     main {
         --average-padding: 1em 0;
         font-family: "Pixel", sans-serif;
